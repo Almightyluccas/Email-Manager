@@ -37,7 +37,10 @@ class ConsoleUI:
 
     def displayNoEmailToBeDeleted(self):
         self.isNotUsed()
+        print(30 * '*')
         print('No emails were deleted.')
+        print(30 * '*')
+        print('\n')
 
     def displayErrorsDeletingEmail(self, errors):
         self.isNotUsed()
