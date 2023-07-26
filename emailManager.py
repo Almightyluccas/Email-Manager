@@ -12,7 +12,7 @@ imapURLDict = {
 }
 
 
-# Terminal Use
+# Terminal Arguments Use
 if len(sys.argv) > 1 and sys.argv[1].upper() != 'GUI':
     if len(sys.argv) == 5:
         consoleUI = ConsoleUI()
