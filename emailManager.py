@@ -26,7 +26,7 @@ if len(sys.argv) > 1 and sys.argv[1].upper() != 'GUI':
             consoleUI.displayProviderInputError()
 
         emailClient = IMAPInterface(emailInput, passwordInput, emailProvider)
-        emailsMarkedDeletion = emailClient.fetchEmailForDeletion(date)
+        emailsMarkedDeletion = emailClient.fetchEmailBeforeDate(date)
 
         consoleUI.displayMarkedForDeletion(emailsMarkedDeletion)
 

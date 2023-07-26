@@ -29,10 +29,10 @@ class IMAPInterface:
             print("Failed to fetch emails.")
             return []
 
-    def fetchEmailForDeletion(self, deleteBeforeDate):
+    def fetchEmailBeforeDate(self, fetchBeforeDate):
 
         self.mail.select("inbox")
-        result, data = self.mail.uid('search', None, f'(BEFORE "{deleteBeforeDate}")')
+        result, data = self.mail.uid('search', None, f'(BEFORE "{fetchBeforeDate}")')
         deletedEmails = []
 
         if result == 'OK':
@@ -63,7 +63,7 @@ class IMAPInterface:
         return deletedEmails
 
     def deleteMarkedEmails(self, deleteBeforeDate):
-        markedEmails = self.fetchEmailForDeletion(deleteBeforeDate)
+        markedEmails = self.fetchEmailBeforeDate(deleteBeforeDate)
         successfullyDeleted = 0
         errors = []
 
