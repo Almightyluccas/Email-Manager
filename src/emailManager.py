@@ -3,7 +3,6 @@ from imapInterface import IMAPInterface
 from consoleUI import ConsoleUI
 import customtkinter
 
-
 imapURLDict = {
     'gmail': 'imap.gmail.com',
     'outlook': 'imap-mail.outlook.com',
@@ -12,7 +11,7 @@ imapURLDict = {
 }
 
 
-# Terminal Arguments Use
+# CLI (terminal) Use
 if len(sys.argv) > 1 and sys.argv[1].upper() != 'GUI':
     if len(sys.argv) == 5:
         consoleUI = ConsoleUI()
